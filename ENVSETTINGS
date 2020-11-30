@@ -3,15 +3,6 @@ GREEN='\033[0;32m' #  Green Color
 RED='\033[0;31m' # Red Color
 NC='\033[0m' # No Color
 
-CONTAINERDIR=/root/cryptcontainer
+HOSTNAME=meet.thomascarduck.de
+EMAIL=thomas.carduck@gmail.com
 
-INICONTAINER=inicontainer.vault
-INICONTAINERLOOPDEV=containerini
-INICONTAINERMNT=/root/mount/containerini
-
-DATACONTAINER=datacontainer.vault
-DATACONTAINERLOOPDEV=containerdata
-DATACONTAINERMNT=/root/mount/containerdata
-
-RCLONEINI=/root/mount/containerini/rclone/rclone.conf
-RCLONEMNT=/root/mount/gTeamdriveSecure
