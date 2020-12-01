@@ -32,6 +32,7 @@ sed -i 's/#PUBLIC_URL.*$/PUBLIC_URL=$JITSIHOSTNAME/' .env
 sed -i 's/#ENABLE_LETSENCRYPT=1/ENABLE_LETSENCRYPT=1/' .env
 sed -i 's/#LETSENCRYPT_DOMAIN=meet.example.com/LETSENCRYPT_DOMAIN=meet.thomascarduck.de/' .env
 sed -i 's/#LETSENCRYPT_EMAIL=alice@atlanta.net/LETSENCRYPT_EMAIL=thomas.carduck@gmail.com/' .env
+sed -i 's/#JVB_ENABLE_APIS=rest,colibri/JVB_ENABLE_APIS=rest,colibri/' .env
 sed -i 's/HTTP_PORT=8000/HTTP_PORT=80/' .env
 sed -i 's/HTTPS_PORT=8443/HTTPS_PORT=443/' .env
 sed -i 's/TZ=UTC/TZ=Europe\/Berlin/' .env

@@ -2,7 +2,7 @@
 
 source ./ENVSETTINGS
 SERVERNAME=test002
-SERVERTYPE=ccx31
+SERVERTYPE=ccx51
 SSHPUBKEY=~/.ssh/hetzner_key.pub
 SSHPRIVKEY=~/.ssh/hetzner_key
 GITREPO=https://github.com/DXorSX/hcloud-jitsi-builder.git
@@ -48,7 +48,7 @@ while [ $SSHUP != 0 ]; do
 	SSHUP=$?
 done
 
-ssh -l root "$HOSTNAME" "apt --yes update && \
+ssh -l root "$IPv4" "apt --yes update && \
 	apt --yes install git && \
 	cd /root && \
 	git clone $GITREPO && \
