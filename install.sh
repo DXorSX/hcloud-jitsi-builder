@@ -39,6 +39,8 @@ IPv4=`hcloud server ip $SERVERNAME`
 
 
 ssh-keygen -R "$IPv4"
+ssh-keygen -R "$HOSTNAME"
+
 
 SSHUP=255
 while [ $SSHUP != 0 ]; do
