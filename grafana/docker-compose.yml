@@ -32,7 +32,7 @@ services:
     container_name: telegraf
     restart: always
     extra_hosts:
-     - "influxdb:localhost"
+     - "influxdb:meet.thomascarduck.de"
     environment:
       HOST_PROC: /rootfs/proc
       HOST_SYS: /rootfs/sys
