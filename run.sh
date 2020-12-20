@@ -25,7 +25,8 @@ fi
 
 cd ~
 # git clone https://github.com/jitsi/docker-jitsi-meet/releases/latest && cd docker-jitsi-meet
-wget https://github.com/jitsi/docker-jitsi-meet/archive/stable-5142.tar.gz && tar -zxf stable-5142.tar.gz && cd docker-jitsi-meet-stable-5142
+# wget https://github.com/jitsi/docker-jitsi-meet/archive/stable-5142.tar.gz && tar -zxf stable-5142.tar.gz && cd docker-jitsi-meet-stable-5142
+wget https://github.com/jitsi/docker-jitsi-meet/archive/stable-5142-3.tar.gz && tar -zxf stable-5142-3.tar.gz && cd docker-jitsi-meet-stable-5142-3
 cp env.example .env
 ./gen-passwords.sh
 sed -i 's/#PUBLIC_URL.*$/PUBLIC_URL=$JITSIHOSTNAME/' .env
