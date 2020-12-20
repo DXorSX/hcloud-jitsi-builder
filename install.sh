@@ -2,7 +2,7 @@
 
 source ./ENVSETTINGS
 SERVERNAME=test002
-SERVERTYPE=ccx51
+SERVERTYPE=ccx21
 SSHPUBKEY=~/.ssh/hetzner_key.pub
 SSHPRIVKEY=~/.ssh/hetzner_key
 GITREPO=https://github.com/DXorSX/hcloud-jitsi-builder.git
@@ -34,7 +34,7 @@ if [ "$SRVSTATUS" = "running" ]; then
 		exit
 fi
 
-hcloud server create --type $SERVERTYPE --name "$SERVERNAME" --image debian-10 --ssh-key $SSHPUBKEY --datacenter fsn1-dc14
+hcloud server create --type $SERVERTYPE --name "$SERVERNAME" --image debian-10 --ssh-key $SSHPUBKEY --datacenter nbg1-dc3
 IPv4=`hcloud server ip $SERVERNAME`
 
 
@@ -46,11 +46,11 @@ SSHUP=255
 while [ $SSHUP != 0 ]; do
 	sleep 1
 	echo "Trying to connect ..."
-	ssh -l root -o="StrictHostKeyChecking off" $IPv4 pwd
+	ssh -l root -o="StrictHostKeyChecking off" $HOSTNAME pwd
 	SSHUP=$?
 done
 
-ssh -l root "$IPv4" "apt --yes update && \
+ssh -l root "$HOSTNAME" "apt --yes update && \
 	apt --yes install git && \
 	cd /root && \
 	git clone $GITREPO && \
