@@ -1,12 +1,13 @@
 #!/bin/bash
 
 source ./ENVSETTINGS
-SERVERNAME=test002
+SERVERNAME=jitsiserver
 SERVERTYPE=ccx21
+#SERVERTYPE=cx11
 SSHPUBKEY=~/.ssh/hetzner_key.pub
 SSHPRIVKEY=~/.ssh/hetzner_key
 GITREPO=https://github.com/DXorSX/hcloud-jitsi-builder.git
-SRVSTATUS=`hcloud server list -o columns=status -o noheader`
+SRVSTATUS=`hcloud server describe $SERVERNAME | grep "^Status:" | sed s/"^Status:.\s"//`
 HCCONTEXT=`hcloud context active`
 
 if [ ! -r "$SSHPRIVKEY" ]; then

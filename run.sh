@@ -25,13 +25,16 @@ fi
 
 cd ~
 # git clone https://github.com/jitsi/docker-jitsi-meet/releases/latest && cd docker-jitsi-meet
-wget https://github.com/jitsi/docker-jitsi-meet/archive/stable-5142.tar.gz && tar -zxf stable-5142.tar.gz && cd docker-jitsi-meet-stable-5142
+# wget https://github.com/jitsi/docker-jitsi-meet/archive/stable-5142.tar.gz && tar -zxf stable-5142.tar.gz && cd docker-jitsi-meet-stable-5142
 # wget https://github.com/jitsi/docker-jitsi-meet/archive/stable-5142-3.tar.gz && tar -zxf stable-5142-3.tar.gz && cd docker-jitsi-meet-stable-5142-3
+wget https://github.com/jitsi/docker-jitsi-meet/archive/refs/tags/stable-5390-3.tar.gz && tar -zxf stable-5390-3.tar.gz && cd docker-jitsi-meet-stable-5390-3
+
+
 cp env.example .env
 ./gen-passwords.sh
 sed -i 's/#PUBLIC_URL.*$/PUBLIC_URL=$JITSIHOSTNAME/' .env
 sed -i 's/#ENABLE_LETSENCRYPT=1/ENABLE_LETSENCRYPT=1/' .env
-sed -i 's/#LETSENCRYPT_DOMAIN=meet.example.com/LETSENCRYPT_DOMAIN=meet.thomascarduck.de/' .env
+sed -i 's/#LETSENCRYPT_DOMAIN=meet.example.com/LETSENCRYPT_DOMAIN=conf.thomascarduck.de/' .env
 sed -i 's/#LETSENCRYPT_EMAIL=alice@atlanta.net/LETSENCRYPT_EMAIL=thomas.carduck@gmail.com/' .env
 sed -i 's/#JVB_ENABLE_APIS=rest,colibri/JVB_ENABLE_APIS=rest,colibri/' .env
 sed -i 's/HTTP_PORT=8000/HTTP_PORT=80/' .env
@@ -39,7 +42,7 @@ sed -i 's/HTTPS_PORT=8443/HTTPS_PORT=443/' .env
 sed -i 's/TZ=UTC/TZ=Europe\/Berlin/' .env
 
 mkdir -p ~/.jitsi-meet-cfg/{web/letsencrypt,transcripts,prosody/config,prosody/prosody-plugins-custom,jicofo,jvb,jigasi,jibri}
-docker-compose up -d
+# docker-compose up -d
 
 
 	

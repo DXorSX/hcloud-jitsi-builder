@@ -3,6 +3,6 @@ GREEN='\033[0;32m' #  Green Color
 RED='\033[0;31m' # Red Color
 NC='\033[0m' # No Color
 
-HOSTNAME=meet.thomascarduck.de
+HOSTNAME=conf.thomascarduck.de
 EMAIL=thomas.carduck@gmail.com
 
